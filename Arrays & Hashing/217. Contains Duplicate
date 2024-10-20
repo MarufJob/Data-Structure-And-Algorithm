@@ -45,3 +45,28 @@ public:
         return false;
     }
 };
+
+
+
+
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+
+        int len = nums.size();
+        // unordered_map<int,int>mapNum; //better than map
+        map<int,int>mapNum;
+        for(int i=0; i<len; i++)
+        {
+            // mapNum[nums[i]]+=1;
+            mapNum[nums[i]]++;
+        }
+
+        for(auto iteration: mapNum)
+        {
+            //cout<<iteration.first<<" = "<<iteration.second<<endl;
+            if(iteration.second>1) return true;
+        }
+        return false;
+    }
+};
