@@ -23,6 +23,7 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         int len = nums.size();
+        int arr[len]={};
         sort(nums.begin(),nums.end());
 
         cout << "Sorted nums: ";
