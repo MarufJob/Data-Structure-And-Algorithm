@@ -23,7 +23,11 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         int len = nums.size();
-        int arr[len]={};
+        int arr[10000]={},i,j,num1,num2;
+        for(int i=0; i<len; i++)
+        {
+            arr[i]=nums[i];
+        }
         sort(nums.begin(),nums.end());
 
         cout << "Sorted nums: ";
@@ -39,8 +43,16 @@ public:
             if(nums[i]+nums[j]>target)
                 j--;
             else
-                return {i,j};
+            break;
+                //return {i,j};
         }
-        return {};
+        for(int k; k<len; k++)
+        {
+            if(arr[k]==nums[i])
+            num1=k;
+            if(arr[k]==nums[j])
+            num2=k;
+        }
+        return {num1,num2};
     }
 };
