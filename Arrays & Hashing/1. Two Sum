@@ -56,3 +56,36 @@ public:
         return {num1,num2};
     }
 };
+
+
+
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int len = nums.size();
+        map<int,int>mapNum;
+        
+        for(int i=0; i<len; i++)
+        {
+            mapNum[nums[i]]++;
+        }
+
+        // cout << "Sorted nums: ";
+        // for (int num : nums) {
+        //     cout << num << " ";
+        // }
+        // cout << endl;
+        
+        for(int i=0,j=len-1; i<len-1; )
+        {
+            if(nums[i]+nums[j]<target)
+                i++;
+            if(nums[i]+nums[j]>target)
+                j--;
+            else
+                return {i,j};
+        }
+        return {};
+    }
+};
