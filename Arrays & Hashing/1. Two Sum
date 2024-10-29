@@ -23,52 +23,12 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         int len = nums.size();
-        int arr[10000]={},i,j,num1,num2;
+        unordered_map<int,int>mapNum;
+
+        // Build the hash table
         for(int i=0; i<len; i++)
         {
-            arr[i]=nums[i];
-        }
-        sort(nums.begin(),nums.end());
-
-        cout << "Sorted nums: ";
-        for (int num : nums) {
-            cout << num << " ";
-        }
-        cout << endl;
-        
-        for(int i=0,j=len-1; i<len-1; )
-        {
-            if(nums[i]+nums[j]<target)
-                i++;
-            if(nums[i]+nums[j]>target)
-                j--;
-            else
-            break;
-                //return {i,j};
-        }
-        for(int k; k<len; k++)
-        {
-            if(arr[k]==nums[i])
-            num1=k;
-            if(arr[k]==nums[j])
-            num2=k;
-        }
-        return {num1,num2};
-    }
-};
-
-
-
-
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        int len = nums.size();
-        map<int,int>mapNum;
-        
-        for(int i=0; i<len; i++)
-        {
-            mapNum[nums[i]]++;
+           mapNum[nums[i]]=i;
         }
 
         // cout << "Sorted nums: ";
@@ -77,15 +37,10 @@ public:
         // }
         // cout << endl;
         
-        for(int i=0,j=len-1; i<len-1; )
-        {
-            if(nums[i]+nums[j]<target)
-                i++;
-            if(nums[i]+nums[j]>target)
-                j--;
-            else
-                return {i,j};
-        }
+        // for(int i=0,j=len-1; i<len-1; )
+        // {
+           
+        // }
         return {};
     }
 };
