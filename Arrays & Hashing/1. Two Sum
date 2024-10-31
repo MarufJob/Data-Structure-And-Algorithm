@@ -31,16 +31,51 @@ public:
            mapNum[nums[i]]=i;
         }
 
-        cout << "hash table: ";
-        for (auto num : mapNum) {
-            cout << num.first << " = " <<num.second<<endl;
-        }
-        cout << endl;
-        
-        // for(int i=0,j=len-1; i<len-1; )
-        // {
-           
+        // cout << "hash table: "<<endl;
+        // for (auto num : mapNum) {
+        //     cout << num.first << " = " <<num.second<<endl;
         // }
-        return {};
+        // cout << endl;
+        
+        for(int j=0; j<len; j++)
+        {
+           int complement = target - nums[j];
+        //    cout<<"Complement = "<<complement<<endl;
+        //    cout<<"mapNum.count = "<<mapNum.count(complement)<<endl;
+        //    cout<<"mapNum[complement] = "<<mapNum[complement]<<endl;
+           
+           if(mapNum.count(complement) && mapNum[complement] != j)
+           {
+            return {j, mapNum[complement]};
+           }
+        }
+        return {}; // No solution found
     }
 };
+
+
+
+/*
+nums = [2,7,11,15]
+target = 9
+
+hash table: 
+11 = 2
+7 = 1
+15 = 3
+2 = 0
+
+Complement = 7
+mapNum.count = 1
+mapNum[complement] = 1
+//-----------------------
+Complement = 2
+mapNum.count = 1
+mapNum[complement] = 0
+Complement = -2
+mapNum.count = 0
+mapNum[complement] = 0
+Complement = -6
+mapNum.count = 0
+mapNum[complement] = 0
+*/
