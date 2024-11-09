@@ -34,7 +34,9 @@ public:
             sort(word.begin(),word.end());
             mapStr[word].push_back(x);
         }
-
+        for(auto x : mapStr)
+        {
+        }
         vector<vector<string>>ans;
         for(auto x : mapStr)
         {
