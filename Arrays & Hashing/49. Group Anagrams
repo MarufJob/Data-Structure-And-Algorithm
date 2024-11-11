@@ -27,12 +27,15 @@ public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         unordered_map<map<char,int>, vector<string>>mapStr;
 
-
         for(string str : strs)
         {
             map<char, int> tempMap;
-            for(auto x : strs)
+            for(int i=0; i<str.length(); i++)
             {
+                if(tempMap.find(str[i]) != tempMap.end())
+                {
+                    
+                }
                 string word = x;
                 sort(word.begin(),word.end());
                 mapStr[word].push_back(x);
