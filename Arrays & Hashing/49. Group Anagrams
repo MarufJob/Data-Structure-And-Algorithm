@@ -34,9 +34,10 @@ public:
             {
                 if(tempMap.find(str[i]) != tempMap.end())
                 {
-                    
+                    int x = tempMap[str[i]];
+                    tempMap.insert({str[i], ++x});
                 }
-                string word = x;
+                
                 sort(word.begin(),word.end());
                 mapStr[word].push_back(x);
             }
