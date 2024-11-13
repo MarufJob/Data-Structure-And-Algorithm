@@ -38,9 +38,10 @@ public:
                     tempMap.insert({str[i], ++x});
                 }
                 
-                sort(word.begin(),word.end());
-                mapStr[word].push_back(x);
-            }
+                else
+                {
+                    tempMap.insert({str[i], 1);
+                }
         }
 
         vector<vector<string>>ans;
