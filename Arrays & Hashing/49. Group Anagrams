@@ -46,7 +46,7 @@ public:
 
         if(mp.find(tempMap) != mp.end() ) 
         {
-            
+            mp[tempMap].push_back(str);
         }
 
         vector<vector<string>>ans;
