@@ -49,11 +49,12 @@ public:
             mp[tempMap].push_back(str);
         }
 
-        vector<vector<string>>ans;
-        for(auto x : mapStr)
+        else
         {
-            ans.push_back(x.second);
+            vector<string> tempStr;
+            tempStr.push_back(str);
+            mp.insert({tempMap, tempStr});
         }
-        return ans;
+
     }
 };
