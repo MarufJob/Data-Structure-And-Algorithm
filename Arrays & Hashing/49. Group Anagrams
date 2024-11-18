@@ -56,6 +56,7 @@ public:
                 mp.insert({tempMap, tempStr});
             }
         }
+        vector<vector<string>>anagrams;
 
     }
 };
