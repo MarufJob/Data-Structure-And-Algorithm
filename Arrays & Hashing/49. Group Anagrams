@@ -57,6 +57,6 @@ public:
             }
         }
         vector<vector<string>>anagrams;
-
+        for(auto p : mp)
     }
 };
